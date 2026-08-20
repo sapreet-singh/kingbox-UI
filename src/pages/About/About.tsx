@@ -1,0 +1,159 @@
+import React, { useState } from 'react';
+import styles from './About.module.css';
+
+interface AboutPageProps {
+  onNavigateHome?: () => void;
+}
+
+export const About: React.FC<AboutPageProps> = ({ onNavigateHome }) => {
+  const [copied, setCopied] = useState<boolean>(false);
+
+  const handleCopyEmail = () => {
+    navigator.clipboard.writeText('sapreetsingh08@gmail.com');
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
+  const skills = [
+    'C#',
+    '.NET',
+    'ASP.NET Core Web API',
+    'Angular',
+    'SQL Server',
+    'Python',
+    'FastAPI',
+    'AI Integrations',
+    'LLM Solutions',
+    'RAG Architecture',
+    'Workflow Automation'
+  ];
+
+  return (
+    <main className={styles.pageContainer}>
+      {/* Hero Header */}
+      <section className={styles.heroHeader}>
+        <span className={styles.crownBadge} role="img" aria-label="KingBox Crown">👑</span>
+        <h1 className={styles.mainTitle}>About KingBox</h1>
+        <p className={styles.subtitle}>
+          Your ultimate destination for seamless, high-speed, and secure online video downloading and media conversion.
+        </p>
+        {onNavigateHome && (
+          <button type="button" className={styles.backBtn} onClick={onNavigateHome}>
+            ← Back to Downloader
+          </button>
+        )}
+      </section>
+
+      {/* About Us Description */}
+      <section className={styles.section}>
+        <h2 className={styles.sectionHeading}>✨ Welcome to KingBox</h2>
+        <p className={styles.paragraph}>
+          Welcome to <strong>KingBox</strong>, your ultimate destination for seamless video downloading and conversion. At KingBox, we are committed to providing our users with a user-friendly, efficient, and secure platform to download and convert videos from a plethora of websites across the internet, including YouTube, Facebook, Vimeo, Dailymotion, and more.
+        </p>
+        <p className={styles.paragraph}>
+          Whether you're looking to download your favorite music video, an educational tutorial, or a podcast, KingBox is designed to cater to all your media downloading needs without the hassle of installing additional software.
+        </p>
+      </section>
+
+      {/* Vision & Mission Grid */}
+      <section className={styles.gridTwo}>
+        <div className={styles.card}>
+          <div className={styles.cardHeader}>
+            <span className={styles.cardIcon}>👁️</span>
+            <h3 className={styles.cardTitle}>Our Vision</h3>
+          </div>
+          <p className={styles.paragraph}>
+            KingBox was created with the ambition to make online video downloading as straightforward and accessible as possible. We believe in the power of the internet and the importance of accessing multimedia content conveniently offline, anytime and anywhere.
+          </p>
+        </div>
+
+        <div className={styles.card}>
+          <div className={styles.cardHeader}>
+            <span className={styles.cardIcon}>🎯</span>
+            <h3 className={styles.cardTitle}>Our Mission</h3>
+          </div>
+          <p className={styles.paragraph}>
+            Our mission is to continue innovating and enhancing our services to meet and exceed the evolving needs of our users. We strive to offer a reliable and high-speed downloading experience while ensuring the utmost security and privacy for our users. At KingBox, we are constantly updating our technology to support a wider range of websites and formats, ensuring that your downloading experience is seamless and of the highest quality.
+          </p>
+        </div>
+      </section>
+
+      {/* Meet Our Founder */}
+      <section className={styles.section}>
+        <h2 className={styles.sectionHeading}>👨‍💻 Meet Our Founder</h2>
+        <div className={styles.founderBox}>
+          <div className={styles.founderHeader}>
+            <div className={styles.avatar}>SS</div>
+            <div className={styles.founderInfo}>
+              <h3 className={styles.founderName}>Sapreet Singh</h3>
+              <p className={styles.founderTagline}>Full Stack .NET and AI Automation Developer</p>
+              <span className={styles.founderMeta}>🎓 Bachelor of Computer Applications (BCA) • 2.5+ Years Professional Experience</span>
+            </div>
+          </div>
+
+          <p className={styles.paragraph}>
+            Sapreet Singh is a Full Stack .NET and AI Automation Developer with 2.5+ years of professional experience in software development and automation.
+          </p>
+          <p className={styles.paragraph}>
+            He specializes in C#, .NET, ASP.NET Core Web API, Angular, SQL Server, Python, FastAPI, AI integrations, LLM-based solutions, RAG, and workflow automation. His experience includes designing and developing scalable web applications, REST APIs, automation systems, and AI-powered software solutions.
+          </p>
+          <p className={styles.paragraph}>
+            Sapreet has a Bachelor of Computer Applications (BCA) background and has worked on a variety of technology projects involving backend systems, modern web applications, API integrations, automation, and AI-powered products. With a strong interest in building practical and user-focused technology, Sapreet created <strong>KingBox</strong> with the goal of providing a simple and efficient platform for online media downloading and conversion.
+          </p>
+
+          <div>
+            <span className={styles.skillsLabel}>Technical Expertise:</span>
+            <div className={styles.skillsGrid}>
+              {skills.map((skill) => (
+                <span key={skill} className={styles.skillPill}>{skill}</span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Team */}
+      <section className={styles.section}>
+        <h2 className={styles.sectionHeading}>🤝 Our Team</h2>
+        <p className={styles.paragraph}>
+          KingBox is built with a focus on reliable, efficient, and user-friendly media technology. Our development approach combines modern backend engineering, web technologies, automation, and AI-assisted solutions to continuously improve platform performance and user experience.
+        </p>
+      </section>
+
+      {/* Contact Us & Address */}
+      <section className={styles.section}>
+        <h2 className={styles.sectionHeading}>📫 Contact Us</h2>
+        <p className={styles.paragraph}>
+          We are always here to listen to your feedback, answer your queries, and provide assistance with any issues you might face while using our service. Your feedback is invaluable to us as it helps us improve and evolve our services to better meet your needs. For any inquiries, suggestions, or support, please do not hesitate to reach out to us.
+        </p>
+
+        <div className={styles.contactCards}>
+          <div className={styles.contactCard}>
+            <span className={styles.contactIcon}>📍</span>
+            <div className={styles.contactContent}>
+              <span className={styles.contactTitle}>Address</span>
+              <p className={styles.contactText}>
+                Shaheed Udham Singh Chowk is a major landmark and intersection located in Cheeka (Chika), in the Kaithal district of Haryana, India (PIN 136034)
+              </p>
+            </div>
+          </div>
+
+          <div className={styles.contactCard}>
+            <span className={styles.contactIcon}>📧</span>
+            <div className={styles.contactContent}>
+              <span className={styles.contactTitle}>Email</span>
+              <div className={styles.emailRow}>
+                <a href="mailto:sapreetsingh08@gmail.com" className={styles.emailAnchor}>
+                  sapreetsingh08@gmail.com
+                </a>
+                <button type="button" className={styles.copyButton} onClick={handleCopyEmail}>
+                  {copied ? '✓ Copied' : 'Copy'}
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  );
+};

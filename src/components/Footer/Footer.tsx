@@ -1,18 +1,23 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styles from './Footer.module.css';
-import { AboutModal } from '../AboutModal/AboutModal';
 
-export const Footer: React.FC = () => {
-  const [showAbout, setShowAbout] = useState<boolean>(false);
+interface FooterProps {
+  currentPage?: 'home' | 'about';
+  onNavigate?: (page: 'home' | 'about') => void;
+}
 
+export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
         <div className={styles.links}>
-          <button type="button" className={styles.linkBtn} onClick={() => setShowAbout(true)}>
+          <button type="button" className={styles.linkBtn} onClick={() => onNavigate?.('home')}>
+            Downloader
+          </button>
+          <button type="button" className={styles.linkBtn} onClick={() => onNavigate?.('about')}>
             About Us
           </button>
-          <button type="button" className={styles.linkBtn} onClick={() => setShowAbout(true)}>
+          <button type="button" className={styles.linkBtn} onClick={() => onNavigate?.('about')}>
             Contact Us
           </button>
         </div>
@@ -24,8 +29,6 @@ export const Footer: React.FC = () => {
           Personal use only. Respect copyright and content owner rights.
         </p>
       </div>
-
-      <AboutModal isOpen={showAbout} onClose={() => setShowAbout(false)} />
     </footer>
   );
 };
