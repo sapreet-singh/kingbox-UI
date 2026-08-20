@@ -58,7 +58,7 @@ async function safeFetch(endpoint: string, options?: RequestInit): Promise<Respo
     const errorMsg = (err instanceof Error) ? err.message : String(err);
     if (errorMsg.includes('Failed to fetch') || errorMsg.includes('NetworkError') || errorMsg.includes('ERR_CONNECTION_REFUSED')) {
       throw new ApiError(
-        'KingBox API is unavailable. Please make sure the backend server is running on http://localhost:5225.',
+        'KingBox API is unavailable. Please make sure the backend server is running.',
         'NETWORK_UNAVAILABLE',
         0
       );
