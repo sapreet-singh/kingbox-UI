@@ -83,16 +83,16 @@ export const About: React.FC<AboutPageProps> = ({ onNavigateHome }) => {
         <h2 className={styles.sectionHeading}>👨‍💻 Meet Our Founder</h2>
         <div className={styles.founderBox}>
           <div className={styles.founderHeader}>
-            <div className={styles.avatar}>SS</div>
+            <div className={styles.avatar}>SG</div>
             <div className={styles.founderInfo}>
-              <h3 className={styles.founderName}>Sapreet Singh</h3>
+              <h3 className={styles.founderName}>Sapreet Gujjar</h3>
               <p className={styles.founderTagline}>Full Stack .NET and AI Automation Developer</p>
-              <span className={styles.founderMeta}>🎓 Bachelor of Computer Applications (BCA) • 2.5+ Years Professional Experience</span>
+              <span className={styles.founderMeta}>🎓 Bachelor of Computer Applications (BCA) • 3+ Years Professional Experience</span>
             </div>
           </div>
 
           <p className={styles.paragraph}>
-            Sapreet Singh is a Full Stack .NET and AI Automation Developer with 2.5+ years of professional experience in software development and automation.
+            Sapreet Gujjar is a Full Stack .NET and AI Automation Developer with 3+ years of professional experience in software development and automation.
           </p>
           <p className={styles.paragraph}>
             He specializes in C#, .NET, ASP.NET Core Web API, Angular, SQL Server, Python, FastAPI, AI integrations, LLM-based solutions, RAG, and workflow automation. His experience includes designing and developing scalable web applications, REST APIs, automation systems, and AI-powered software solutions.
