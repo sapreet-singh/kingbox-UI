@@ -11,7 +11,32 @@
   text-align: center;
   display: flex;
   flex-direction: column;
-  gap: 0.35rem;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.linkBtn {
+  background: none;
+  border: none;
+  color: var(--color-primary-light, #ff9900);
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.linkBtn:hover {
+  color: #ffffff;
+  text-decoration: underline;
 }
 
 .copy {

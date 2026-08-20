@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styles from './Header.module.css';
+import { AboutModal } from '../AboutModal/AboutModal';
 
 export const Header: React.FC = () => {
   const [showInfoModal, setShowInfoModal] = useState<boolean>(false);
@@ -17,44 +18,14 @@ export const Header: React.FC = () => {
             type="button" 
             className={styles.navButton} 
             onClick={() => setShowInfoModal(true)}
-            aria-label="About KingBox"
+            aria-label="About Us"
           >
-            About
+            About Us
           </button>
         </nav>
       </div>
 
-      {showInfoModal && (
-        <div className={styles.modalOverlay} onClick={() => setShowInfoModal(false)}>
-          <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
-            <div className={styles.modalHeader}>
-              <h3>👑 About KingBox</h3>
-              <button 
-                type="button" 
-                className={styles.closeButton} 
-                onClick={() => setShowInfoModal(false)}
-                aria-label="Close dialog"
-              >
-                ✕
-              </button>
-            </div>
-            <div className={styles.modalBody}>
-              <p><strong>KingBox</strong> is your personal media converter and downloader.</p>
-              <p>All processing is executed on temporary storage and saved directly to your local computer.</p>
-              <ul className={styles.infoList}>
-                <li>⚡ High quality audio extraction (MP3 up to 320 kbps)</li>
-                <li>🎬 Video remuxing and transcoding (MP4)</li>
-                <li>🔒 Zero persistent server storage or database tracking</li>
-              </ul>
-            </div>
-            <div className={styles.modalFooter}>
-              <button type="button" className={styles.primaryModalBtn} onClick={() => setShowInfoModal(false)}>
-                Got it
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
+      <AboutModal isOpen={showInfoModal} onClose={() => setShowInfoModal(false)} />
     </header>
   );
 };
